@@ -93,7 +93,72 @@ if(legal){
     console.log("this legal nig")
 }
 
+interface Person {
+    name: string;
+    age: number;
+    greet(phrase: string): void;
+}
+
+class Employee implements Person {
+    name: string;
+    age: number;
+
+    constructor(n: string, a: number) {
+        this.name = n;
+        this.age = a;
+    }
+
+    greet(phrase: string): void {
+        console.log(`${phrase}, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
+
+const a = new Employee("harkirat", 23);
+a.greet("Hello"); // Output: Hello, my name is harkirat and I am 23 years old.
+
+
+// how do we do classes in js , like we dont need o write the name and age before contructor right , can oyu please explain everything
+
+interface User{
+  age : number
+}
+
+interface Manage extends User{
+  name : number;
+}
+
+interface Employee extends User{
+  name : string;
+}
 
 
 
+function myFunction(cb1: () => void , cb2 : (number:string ) => number) : string {
+  cb1();
+  cb2("");
 
+  return "1";
+}
+
+
+function first() : any{
+  console.log("first")
+}
+
+
+function second() : any{
+  console.log(
+    'secnd'
+  )
+}
+
+myFunction(first , second);
+
+
+interface Manager {
+  name : string
+}
+
+interface Techlead {
+  
+}
