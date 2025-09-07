@@ -34,40 +34,17 @@ export class InMemoryStore implements Store {
 }
 
 
-function greet(firstname: string){
-    console.log('hi' + firstname)
-}
-
-greet('arya');
-
-
-
 
 
 // this is called type inference , it gets the type
 // ts doesnt understand your code ,it only understands the type
-//create a function that takes another function as input and runs it after 1 second
-
-
-
-function abc(){
-    console.log(" hi there")
-}
-
-
-function takeAnother(x : () => void){
-   setTimeout(() => {
-    x()
-   }, 1000);
-}
-
+//create a function that takes another function as input and runs it after 1 seco
 
 
 
 // this is how you give type to a function 
 // passing an argument 
 // things can be infered
-takeAnother(abc)
 
 
 
@@ -109,12 +86,12 @@ const legal = isLegal({
 })
 
 
+
+
+
 if(legal){
     console.log("this legal nig")
 }
-
-
-
 
 
 
