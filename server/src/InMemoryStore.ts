@@ -99,19 +99,19 @@ interface Person {
     greet(phrase: string): void;
 }
 
-class Employee implements Person {
-    name: string;
-    age: number;
+// class Employee implements Person {
+//     name: string;
+//     age: number;
 
-    constructor(n: string, a: number) {
-        this.name = n;
-        this.age = a;
-    }
+//     constructor(n: string, a: number) {
+//         this.name = n;
+//         this.age = a;
+//     }
 
-    greet(phrase: string): void {
-        console.log(`${phrase}, my name is ${this.name} and I am ${this.age} years old.`);
-    }
-}
+//     greet(phrase: string): void {
+//         console.log(`${phrase}, my name is ${this.name} and I am ${this.age} years old.`);
+//     }
+// }
 
 const a = new Employee("harkirat", 23);
 a.greet("Hello"); // Output: Hello, my name is harkirat and I am 23 years old.
@@ -119,17 +119,17 @@ a.greet("Hello"); // Output: Hello, my name is harkirat and I am 23 years old.
 
 // how do we do classes in js , like we dont need o write the name and age before contructor right , can oyu please explain everything
 
-interface User{
-  age : number
-}
+// interface User{
+//   age : number
+// }
 
-interface Manage extends User{
-  name : number;
-}
+// interface Manage extends User{
+//   name : number;
+// }
 
-interface Employee extends User{
-  name : string;
-}
+// interface Employee extends User{
+//   name : string;
+// }
 
 
 
@@ -160,5 +160,67 @@ interface Manager {
 }
 
 interface Techlead {
-  
+
 }
+
+
+
+
+// what are types 
+
+//very similar to interface ,it lets you aggegate data together
+
+type User2 = {
+  firstName : string;
+  lastname : string;
+}
+
+
+interface User3 {
+  firstname : string;
+  lastname : string;
+}
+
+
+// unions 
+type StringOrNumber = string | number;
+
+
+type greetArg = number | string
+function greet(id: greetArg){
+
+}
+
+greet(1);
+greet("1")
+
+
+// intersection
+// every property of multiple ->
+
+type Employee = {
+    name : string ;
+    startDate : Date;
+  }
+
+interface Manager{
+  name : string;
+  department : string;
+}
+
+type Techleadd = Employee & Manager
+
+const te: Techleadd = {
+  name : "har",
+  startDate : new Date(),
+  department : "rfs"
+}
+// 
+
+
+// strongly typed vs loosely typed
+// it is just a syntactical superset of javascript and its optional typing
+// the tsc compiler -> ts code to js command 
+// number , string , boolean
+// unions and intersection 
+// how to write array in ts 
